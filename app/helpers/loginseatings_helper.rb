@@ -1,0 +1,2 @@
+module LoginseatingsHelper
+end

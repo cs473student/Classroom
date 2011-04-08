@@ -1,0 +1,21 @@
+<%= form_for(@loginseating) do |f| %>
+  <% if @loginseating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loginseating.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @loginseating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :studentfirst %><br />
+    <%= f.text_field :studentfirst %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

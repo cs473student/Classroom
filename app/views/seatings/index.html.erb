@@ -1,0 +1,23 @@
+<h1>Listing seatings</h1>
+
+<table border cellspacing = "5" width="100%">
+<% for i in 1..5 %>
+  <tr>
+  <% for j in 1..9 %>
+	<td>
+	<% if j == 5 %>
+		BLANK CELL
+	<% else %>
+		Student <%= i %><%= j %>
+	<% end %>
+	</td>
+  <% end %>
+  </tr>
+<% end %>
+
+</table>
+
+<%= link_to 'LOGIN', login_path %>
+
+<br />
+

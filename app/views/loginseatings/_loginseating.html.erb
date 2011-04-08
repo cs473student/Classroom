@@ -1,0 +1,11 @@
+<%= div_for loginseating do %>
+  <h3>
+    <%= link_to loginseating.title, loginseating %>
+    <span class='actions'>
+      <%= link_to "Edit", edit_loginseating_path(loginseating) %>
+      <%= link_to "Delete", loginseating, :confirm => "Are you sure?", :method => :delete %>
+    </span>
+  </h3>
+  <%= loginseating.body %>
+<% end %>
+

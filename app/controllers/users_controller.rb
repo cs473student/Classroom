@@ -2,11 +2,11 @@ class UsersController < ApplicationController
 	before_filter :authenticate, :only => [:edit, :update]
 	
 	def new
-		@user = Users.new
+		@user = User.new
 	end
 
 	def create
-		@user = Users.new(params[:user])
+		@user = User.new(params[:user])
 		if @user.save
 			redirect_to seatings_path, :notice => 'User successfully added.'
 		end

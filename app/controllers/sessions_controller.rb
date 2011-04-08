@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 	def create
 		if user = Users.authenticate(params[:username], params[:password])
 			session[:user_id] = user.id
-			redirect_to loginseating_path 
+			redirect_to loginseatings_path 
 		else
 			flash.now[:alert] = "Invalid login/password combination"
 			render :action => 'new'

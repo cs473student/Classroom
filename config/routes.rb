@@ -3,7 +3,10 @@ Classroom::Application.routes.draw do
   #resources :loginseatings
 
   resources :users
-
+  
+  match '/users/index' => 'users#index', :as => :users_index
+  match '/users/new' => 'users#new', :as => :newuser
+  
   
   match '/seatings/index' => 'seatings#index', :as => :seating
   
@@ -11,17 +14,18 @@ Classroom::Application.routes.draw do
 	resources :comments
   end
   
-  match '/loginseatings/' => 'loginseatings#index', :as => :loginseating
-  match '/loginseatings/' => 'loginseatings#select', :as => :select 
- 
+  match '/loginseatings/' => 'loginseatings#index', :as => :loginseatings
+  match '/loginseatings/select' => 'loginseatings#select', :as => :select 
+
   
   resources :seatings
   resource :session  
 
-  match '/login' => "sessions#new", :as => "login"
-  match '/logout' => "sessions#destroy", :as => "logout"
-  
+  match '/login' => 'sessions#new', :as => :login
+  match '/logout' => 'sessions#destroy', :as => :logout
+
   resources :login
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -79,5 +83,5 @@ Classroom::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  root :to => "seatings#index"
+  root :to => 'seatings#index'
   end

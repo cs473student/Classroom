@@ -24,7 +24,8 @@ Classroom::Application.routes.draw do
   resources :seatings
   resource :session  
 
-  
+  match '/msgs/new' => 'msgs#new', :as => :msgs_new
+  resources :msgs  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,5 +1,5 @@
 class LoginseatingsController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show]
+  before_filter :authenticate, :only => [:edit, :update]
   
   # GET /loginseatings
   # GET /loginseatings.xml
@@ -27,10 +27,11 @@ class LoginseatingsController < ApplicationController
   # GET /loginseatings/new.xml
   def new
     @loginseating = Loginseating.new
-
+	
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @loginseating }
+	  
     end
   end
 
@@ -43,18 +44,20 @@ class LoginseatingsController < ApplicationController
   # POST /loginseatings.xml
   def create
     @loginseating = Loginseating.new(params[:loginseating])
+	@lg2 = Loginseating.new
+	@lg2.studentfirst = "BOB"
+	@lg2.studentlast = "DOE"
+	@lg2.row = 1
+	@lg2.column = 3
+	if @lg2.save
+        redirect_to seating_path, :notice => 'Loginseating was successfully created.'
+	end
 
-    respond_to do |format|
-      if @loginseating.save
-        format.html { redirect_to(@loginseating, :notice => 'Loginseating was successfully created.') }
-        format.xml  { render :xml => @loginseating, :status => :created, :location => @loginseating }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @loginseating.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+    
+	end
 
+
+  
   # PUT /loginseatings/1
   # PUT /loginseatings/1.xml
   def update

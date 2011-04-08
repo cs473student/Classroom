@@ -1,3 +1,32 @@
+<title>Class Room Seating</title> 
+
+
+<% user = Users.find(session[:user_id]) %>
+<h5>Welcome, <%= user.username %></h5>
+<%= link_to 'Logout', logout_path %>
+<br /> 
+<h1>Classroom Seating</h1>  
+<table border cellspacing=4 width="100%"> 
+<br /><br /> FRONT OF CLASS <br /> 
+<% for i in 1..5 %>
+ 	<tr>
+	<% for j in 1..9 %>
+		<td>
+		<% if j == 5 %>
+			BLANK CELL
+		<% else %>
+			Student <%= i %> <%= j %><br />
+		<% end %> 			
+		</td> 		
+	<% end %> 	
+	</tr> 
+<% end %> 
+</table>   
+<br />
+
+
+
+
 <h1>New loginseating</h1>
 
 <%= render 'form' %>

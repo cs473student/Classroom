@@ -1,10 +1,13 @@
-<html>
 <title>Class Room Seating</title> 
+
+
 <% user = Users.find(session[:user_id]) %>
 <h5>Welcome, <%= user.username %></h5>
 <%= link_to 'Logout', logout_path %>
 <br /> 
 <h1>Classroom Seating</h1>  
+
+<%= link_to 'Click to choose a seat', loginseatings_edit_path %>
 <table border cellspacing=4 width="100%"> 
 <br /><br /> FRONT OF CLASS <br /> 
 <% for i in 1..5 %>
@@ -14,15 +17,28 @@
 		<% if j == 5 %>
 			BLANK CELL
 		<% else %>
-			Student <%= i %> <%= j %><br /><%= link_to 'Select Seat', loginseatings_edit_path %>
+			Student <%= i %> <%= j %><br />
 		<% end %> 			
 		</td> 		
 	<% end %> 	
 	</tr> 
-	<% end %> 
+<% end %> 
 </table>   
-<br />
 
-	
-</html>
+<br />
+<%= link_to 'Click to add a message', msgs_new_path %>
+<table border cellspacing=4 width="25%"> 
+<% mymsg = Msg.last %>
+<% index = mymsg.id %>
+<% for i in 1..index %>
+<% currentmsg = Msg.find(i) %>
+	<tr>
+	<td>
+	<%= currentmsg.msg_text%>
+	</td>
+	</tr>
+<% end %>
+
+</table>   
+
 

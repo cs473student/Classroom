@@ -16,7 +16,7 @@ Classroom::Application.routes.draw do
   match '/seatings/index' => 'seatings#index', :as => :seating
   
 
-  match '/loginseatings/select' => 'loginseatings#select', :as => :loginseatings_edit
+  match '/loginseatings/new' => 'loginseatings#new', :as => :loginseatings_edit
   match '/loginseatings/' => 'loginseatings#index', :as => :loginseatings
 
   resources :loginseatings 

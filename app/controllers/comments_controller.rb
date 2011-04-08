@@ -23,5 +23,5 @@ class CommentsController < ApplicationController
 	private
 		def load_loginseating
 			@loginseatings = @loginseatings.find(params[:id])
-
+		end
 end

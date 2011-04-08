@@ -15,11 +15,11 @@ Classroom::Application.routes.draw do
   
   match '/seatings/index' => 'seatings#index', :as => :seating
   
-  resources :loginseatings 
 
   match '/loginseatings/edit' => 'loginseatings#edit', :as => :loginseatings_edit
   match '/loginseatings/' => 'loginseatings#index', :as => :loginseatings
 
+  resources :loginseatings 
   
   resources :seatings
   resource :session  

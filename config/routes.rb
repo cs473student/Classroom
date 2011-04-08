@@ -2,6 +2,11 @@ Classroom::Application.routes.draw do
 
   #resources :loginseatings
 
+  match '/login' => 'sessions#new', :as => :login
+  match '/logout' => 'sessions#destroy', :as => :logout
+
+  resources :login
+
   resources :users
   
   match '/users/index' => 'users#index', :as => :users_index
@@ -19,10 +24,6 @@ Classroom::Application.routes.draw do
   resources :seatings
   resource :session  
 
-  match '/login' => 'sessions#new', :as => :login
-  match '/logout' => 'sessions#destroy', :as => :logout
-
-  resources :login
   
   
   # The priority is based upon order of creation:

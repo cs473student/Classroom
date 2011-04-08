@@ -1,10 +1,9 @@
-<%= form_for(@user) do |f| %>
+<% form_for @loginseatings do |f| %>
 
-  <div class="field">
-  
-  </div>
+  <%= f.label :row %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.select :row, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+
+  <%= f.submit %>
+
 <% end %>

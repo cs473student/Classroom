@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])
 		if @user.save
-			redirect_to loginseatings_path, :notice => 'User successfully added.'
+			redirect_to seatings_path, :notice => 'User successfully added.'
 		end
 	end
 

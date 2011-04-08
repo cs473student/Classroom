@@ -82,4 +82,15 @@ class LoginseatingsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def select
+    @loginseating = Loginseating.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @loginseating }
+    end
+  end
+
+  
 end

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
 	def create
-		if user = Users.authenticate(params[:username], params[:password])
+		if user = User.authenticate(params[:username], params[:password])
 			session[:user_id] = user.id
 			redirect_to loginseatings_path 
 		else

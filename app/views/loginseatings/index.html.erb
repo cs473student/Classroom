@@ -14,13 +14,16 @@
 		<% if j == 5 %>
 			BLANK CELL
 		<% else %>
-			Student <%= i; %> <%= j; %><br /><%= link_to 'Select Seat', :controller => "loginseatings"  %>
+			Student <%= i %> <%= j %><br /><%= link_to 'Select Seat', loginseatings_edit_path %>
 		<% end %> 			
 		</td> 		
 	<% end %> 	
 	</tr> 
 	<% end %> 
-	</table>   
-	<br />  
+</table>   
+<br />
+
+<%= render 'seatselection' %>
+	
 </html>
 

@@ -1,0 +1,34 @@
+<h1>New lgseating</h1>
+
+<h1>Classroom Seating</h1>  
+<table border cellspacing=4 width="100%"> 
+<br /><br /> FRONT OF CLASS <br /> 
+<% for i in 1..5 %>
+ 	<tr>
+	<% for j in 1..9 %>
+		<td>
+		<% student = Lgseating.where(:row => i, :column => j).first %>
+			
+		<% if j == 5 %>
+			BLANK CELL 
+		<% else %>			
+			<% if !student.blank? %>
+				<%= student.studentfirst %><br />
+				<%= student.studentlast %><br />				
+			<% else %>
+				Student <%= i %> <%= j %><br />
+			<% end %> 			
+		<% end %>
+		</td> 		
+	<% end %> 	
+	</tr> 
+<% end %> 
+</table>   
+<br />
+
+
+<%= render 'form' %>
+
+  
+
+<%= link_to 'Back', lgseatings_path %>

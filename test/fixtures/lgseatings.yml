@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  studentfirst: MyString
+  studentlast: MyString
+  row: 1
+  column: 1
+
+two:
+  studentfirst: MyString
+  studentlast: MyString
+  row: 1
+  column: 1

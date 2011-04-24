@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Studentfirst:</b>
+  <%= @lgseating.studentfirst %>
+</p>
+
+<p>
+  <b>Studentlast:</b>
+  <%= @lgseating.studentlast %>
+</p>
+
+<p>
+  <b>Row:</b>
+  <%= @lgseating.row %>
+</p>
+
+<p>
+  <b>Column:</b>
+  <%= @lgseating.column %>
+</p>
+
+
+<%= link_to 'Edit', edit_lgseating_path(@lgseating) %> |
+<%= link_to 'Back', lgseatings_path %>

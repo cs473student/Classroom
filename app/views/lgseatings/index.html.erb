@@ -1,0 +1,14 @@
+<title>Class Room Seating</title> 
+
+
+<% user = Users.find(session[:user_id]) %>
+<h5>Welcome, <%= user.username %></h5>
+<%= link_to 'Logout', logout_path %>
+<br /> 
+<h1>Classroom Seating</h1>  
+
+<%= link_to 'Click to choose/view a seating', loggedinseatings_edit_path %>
+<br /><br />
+<%= link_to 'Click to add/view a message', msgs_new_path %>
+
+

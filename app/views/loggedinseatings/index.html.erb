@@ -1,0 +1,29 @@
+<h1>Listing loggedinseatings</h1>
+
+<table>
+  <tr>
+    <th>Studentfirst</th>
+    <th>Studentlast</th>
+    <th>Row</th>
+    <th>Column</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loggedinseatings.each do |loggedinseating| %>
+  <tr>
+    <td><%= loggedinseating.studentfirst %></td>
+    <td><%= loggedinseating.studentlast %></td>
+    <td><%= loggedinseating.row %></td>
+    <td><%= loggedinseating.column %></td>
+    <td><%= link_to 'Show', loggedinseating %></td>
+    <td><%= link_to 'Edit', edit_loggedinseating_path(loggedinseating) %></td>
+    <td><%= link_to 'Destroy', loggedinseating, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Loggedinseating', new_loggedinseating_path %>

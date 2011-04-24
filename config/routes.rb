@@ -1,5 +1,9 @@
 Classroom::Application.routes.draw do
 
+
+
+  resources :lgseatings
+
   #resources :loginseatings
 
   match '/login' => 'sessions#new', :as => :login
@@ -15,11 +19,17 @@ Classroom::Application.routes.draw do
   
   match '/seatings/index' => 'seatings#index', :as => :seating
   
-
+  
   match '/loginseatings/new' => 'loginseatings#new', :as => :loginseatings_edit
   match '/loginseatings/' => 'loginseatings#index', :as => :loginseatings
 
+  match '/lgseatings/' => 'lgseatings#index', :as => :loggedinseatings
+  match '/lgseatings/new' => 'lgseatings#new', :as => :loggedinseatings_edit
+
+  
   resources :loginseatings 
+  resources :loggedinseatings
+  resources :lgseatings
   
   resources :seatings
   resource :session  

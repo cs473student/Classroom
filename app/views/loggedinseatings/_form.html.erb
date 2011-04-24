@@ -1,0 +1,33 @@
+<%= form_for(@loggedinseating) do |f| %>
+  <% if @loggedinseating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loggedinseating.errors.count, "error") %> prohibited this loggedinseating from being saved:</h2>
+
+      <ul>
+      <% @loggedinseating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :studentfirst %><br />
+    <%= f.text_field :studentfirst %>
+  </div>
+  <div class="field">
+    <%= f.label :studentlast %><br />
+    <%= f.text_field :studentlast %>
+  </div>
+  <div class="field">
+    <%= f.label :row %><br />
+    <%= f.text_field :row %>
+  </div>
+  <div class="field">
+    <%= f.label :column %><br />
+    <%= f.text_field :column %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

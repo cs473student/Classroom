@@ -1,0 +1,39 @@
+<%= form_for(@lgseating) do |f| %>
+  <% if @lgseating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lgseating.errors.count, "error") %> prohibited this lgseating from being saved:</h2>
+
+      <ul>
+      <% @lgseating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% user = Users.find(session[:user_id]) %>
+<br /> 
+
+
+  <div class="field">
+    <%= f.label "First Name: " %> 
+	<%= f.label user.firstname %><br />
+    <%= f.hidden_field :studentfirst, :value => user.firstname %>
+  </div>
+  <div class="field">
+    <%= f.label "Last Name: " %> 
+	<%= f.label user.lastname %><br />
+    <%= f.hidden_field :studentlast, :value => user.lastname %>
+  </div>
+<div class = "field">
+  <%= f.label :row %>
+  <%= f.select :row, [['1',1],['2',2],['3',3],['4',4],['5',5]] %>
+  </div>
+  <div class = "field">
+  <%= f.label :column %>
+  <%= f.select :column, [['1',1],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8]] %>
+  </div>
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

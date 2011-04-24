@@ -4,11 +4,11 @@ class LoginseatingsController < ApplicationController
   # GET /loginseatings
   # GET /loginseatings.xml
   def index
-    @loginseating = Loginseating.all
+    @loginseating = Loginseatings.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @loginseatings }
+      format.xml  { render :xml => @loginseating }
     end
   end
 
@@ -26,7 +26,7 @@ class LoginseatingsController < ApplicationController
   # GET /loginseatings/new
   # GET /loginseatings/new.xml
   def new
-    @loginseating = Loginseating.new
+    @loginseating = Loginseatings.new
 	
     respond_to do |format|
       format.html # new.html.erb

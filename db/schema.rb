@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110408060012) do
+ActiveRecord::Schema.define(:version => 20110424202703) do
+
+  create_table "lgseatings", :force => true do |t|
+    t.string   "studentfirst"
+    t.string   "studentlast"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "row"
+    t.integer  "column"
+  end
+
+  create_table "loggedinseatings", :force => true do |t|
+    t.string   "studentfirst"
+    t.string   "studentlast"
+    t.string   "row"
+    t.string   "column"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "logins", :force => true do |t|
     t.datetime "created_at"

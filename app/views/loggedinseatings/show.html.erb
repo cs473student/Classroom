@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Studentfirst:</b>
+  <%= @loggedinseating.studentfirst %>
+</p>
+
+<p>
+  <b>Studentlast:</b>
+  <%= @loggedinseating.studentlast %>
+</p>
+
+<p>
+  <b>Row:</b>
+  <%= @loggedinseating.row %>
+</p>
+
+<p>
+  <b>Column:</b>
+  <%= @loggedinseating.column %>
+</p>
+
+
+<%= link_to 'Edit', edit_loggedinseating_path(@loggedinseating) %> |
+<%= link_to 'Back', loggedinseatings_path %>

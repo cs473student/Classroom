@@ -1,9 +1,9 @@
 require 'digest'
-class Users < ActiveRecord::Base
+class UsersAccess < ActiveRecord::Base
+	validates :username, :uniqueness => true
+	#validates_uniqueness_of :username	
 
-	validates_uniqueness_of :username
-	
-	attr_accessor :password
+	attr_accessor :password		
 	
 	
 	validates :password, :confirmation => true,
@@ -11,7 +11,7 @@ class Users < ActiveRecord::Base
 						:presence => true
 						
 	before_save :encrypt_new_password
-	
+
 	def self.authenticate(username, password)
 		user = find_by_username(username)
 		return user if user && user.authenticated?(password)
@@ -33,8 +33,6 @@ class Users < ActiveRecord::Base
 		
 		def encrypt(string)
 			Digest::SHA1.hexdigest(string)
-		end
-		
-		
-
+		end	
 end
+

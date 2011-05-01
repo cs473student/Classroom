@@ -1,0 +1,29 @@
+<h1>Listing users_accesses</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users_accesses.each do |users_access| %>
+  <tr>
+    <td><%= users_access.username %></td>
+    <td><%= users_access.password %></td>
+    <td><%= users_access.firstname %></td>
+    <td><%= users_access.lastname %></td>
+    <td><%= link_to 'Show', users_access %></td>
+    <td><%= link_to 'Edit', edit_users_access_path(users_access) %></td>
+    <td><%= link_to 'Destroy', users_access, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Users access', new_users_access_path %>

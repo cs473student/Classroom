@@ -1,7 +1,7 @@
 <title>Class Room Seating</title> 
 
 
-<% user = Users.find(session[:user_id]) %>
+<% user = UsersAccess.find(session[:user_id]) %>
 <h5>Welcome, <%= user.username %></h5>
 <%= link_to 'Logout', logout_path %>
 <br /> 

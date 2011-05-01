@@ -27,8 +27,19 @@
 <br />
 
 
-<%= render 'form' %>
+<% user = UsersAccess.find(session[:user_id]) %>
 
+<% lguser = Lgseating.where(:studentfirst =>  user.firstname).first %>
+<% if !lguser.blank? %>
+		<% id = Lgseating.find(lguser.id) %>
+	    <%= link_to 'Destroy', id, :confirm => 'Are you sure?', :id => 5, :method => :delete %>
+		<br />
+
+<% else %>
+
+	<%= render 'form' %>
+
+<% end %>	
   
 
 <%= link_to 'Back', lgseatings_path %>

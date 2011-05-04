@@ -32,7 +32,7 @@
 <% lguser = Lgseating.where(:studentfirst =>  user.firstname).first %>
 <% if !lguser.blank? %>
 		<% id = Lgseating.find(lguser.id) %>
-	    <%= link_to 'Destroy', id, :confirm => 'Are you sure?', :id => 5, :method => :delete %>
+	    <%= link_to 'Destroy', id, :confirm => 'Are you sure?', :id => lguser.id, :method => :delete %>
 		<br />
 
 <% else %>

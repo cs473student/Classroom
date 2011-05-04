@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110428005642) do
+ActiveRecord::Schema.define(:version => 20110501204948) do
 
   create_table "lgseatings", :force => true do |t|
     t.string   "studentfirst"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110428005642) do
     t.datetime "updated_at"
     t.integer  "row"
     t.integer  "column"
+    t.string   "username"
   end
 
   create_table "loggedinseatings", :force => true do |t|

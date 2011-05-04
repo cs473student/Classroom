@@ -15,6 +15,11 @@
 <br /> 
 
   <div class="field">
+    <%= f.label "Username: " %> 
+	<%= f.label user.username %><br />
+    <%= f.hidden_field :username, :value => user.username %>
+  </div>
+  <div class="field">
     <%= f.label "First Name: " %> 
 	<%= f.label user.firstname %><br />
     <%= f.hidden_field :studentfirst, :value => user.firstname %>
